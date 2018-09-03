@@ -33,7 +33,7 @@ public class OrdersServlet extends HttpServlet {
             dbService.addOrder(order);
             response.getWriter().print("Order has been added");
         }else {
-            response.getWriter().print("This product or user don't exist");
+            response.getWriter().print("This product or user not exist");
         }
     }
 

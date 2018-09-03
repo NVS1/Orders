@@ -18,8 +18,7 @@ public class ProductsServlet extends HttpServlet {
         String price = request.getParameter("price");
         if (name.isEmpty() || price.isEmpty()){
             response.getWriter().print("Fields not filled");
-        }
-        if (dbService.isPresentProduct(name)){
+        }else if (dbService.isPresentProduct(name)){
             response.getWriter().print("this product exist");
         } else {
             Product product = new Product(name,Integer.parseInt(price));

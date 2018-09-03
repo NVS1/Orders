@@ -20,8 +20,7 @@ public class UsersServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         if (name.isEmpty() || email.isEmpty() || phone.isEmpty()){
             response.getWriter().print("Fields not filled");
-        }
-        if (dbService.isPresentUser(phone)){
+        }else if (dbService.isPresentUser(phone)){
             response.getWriter().print("This phone number exist");
         } else {
             User newUser = new User(name,email,phone);
